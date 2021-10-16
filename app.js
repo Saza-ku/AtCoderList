@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors')
 const mysql = require('mysql');
 const session = require('express-session');
 const bcrypt = require('bcrypt');
@@ -41,6 +42,8 @@ app.use((req, res, next) => {
   }
   next();
 });
+
+app.use(cors())
 
 console.log('handleSisconnectをこれから行います（６６）');
 
